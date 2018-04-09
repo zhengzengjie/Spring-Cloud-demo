@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: zuul
+  zipkin:
+    base-url: http://localhost:8889
+    enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+zuul:
+  routes:
+    demo:
+      path: /demo/**
+      service-id: service-demo
+    demo1:
+      path: /demo1/**
+      service-id: service-demo-1

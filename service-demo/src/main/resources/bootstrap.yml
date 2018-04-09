@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: service-demo
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      label: master
+      profile: dev
+  zipkin:
+    base-url: http://localhost:8889
+    enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
